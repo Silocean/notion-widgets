@@ -53,22 +53,42 @@
         })
 
         option = {
-          tooltip: {
-            trigger: 'item' // 当鼠标悬浮在某个数据项上时触发
-          },
-          xAxis: {
-            type: 'category',
-            data: dateArr
-          },
-          yAxis: {
-            type: 'value'
-          },
-          series: [
+          // Make gradient line here
+          visualMap:
             {
-              data: weightArr,
-              type: 'line'
+              show: false,
+              type: 'continuous',
+              seriesIndex: 0,
+              min: 75,
+              max: 100
+            },
+          title:
+            {
+              left: 'center',
+              text: '体重变化'
+            },
+          tooltip: {
+            trigger: 'axis'
+          },
+          xAxis:
+            {
+              data: dateArr
+            },
+          yAxis:
+            {
+              min: 75,
+              max: 100
+            },
+          grid:
+            {
+              bottom: '60%'
+            },
+          series:
+            {
+              type: 'line',
+              showSymbol: false,
+              data: weightArr
             }
-          ]
         };
 
         if (option && typeof option === 'object') {
