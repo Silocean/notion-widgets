@@ -35,7 +35,6 @@
         
         console.log(data);
 
-
         var dom = document.getElementById('container');
         var myChart = echarts.init(dom, null, {
           renderer: 'canvas',
@@ -54,18 +53,20 @@
         })
 
         option = {
-        xAxis: {
-          type: 'category',
-          data: dateArr
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [
+          tooltip: {
+            trigger: 'item' // 当鼠标悬浮在某个数据项上时触发
+          },
+          xAxis: {
+            type: 'category',
+            data: dateArr
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
             {
               data: weightArr,
-              type: 'line',
-	      areaStyle: {}
+              type: 'line'
             }
           ]
         };
@@ -75,7 +76,6 @@
         }
 
         window.addEventListener('resize', myChart.resize);
-
 
     })
     .catch(error => {
