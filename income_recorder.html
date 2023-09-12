@@ -78,18 +78,25 @@
           tooltip: {
             trigger: 'axis'
           },
+          grid: {
+            left: '3%',  // 图表左边距
+            right: '5%', // 图表右边距，留出足够的空间给图例
+            top: '3%',   // 图表上边距
+            bottom: '3%', // 图表下边距,
+            containLabel: true // x轴、y轴的标签也包含进去一起偏移
+          },
           legend: {
             data: ['Income', 'Expenditure', 'Balance'],
             orient: 'vertical', // 图例垂直排列
             top: 'center', // 图例距离顶部的距离
-            left: 'right', // 图例举例左侧的距离
+            left: 'right', // 图例距离左侧的距离
           },
-          grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-          },
+          // grid: {
+          //   left: '3%',
+          //   right: '4%',
+          //   bottom: '3%',
+          //   containLabel: true
+          // },
           toolbox: {
             feature: {
               saveAsImage: {}
