@@ -72,13 +72,17 @@
 
         option = {
           title: {
-            text: '收支图'
+            text: '收支图',
+            left: 'center'
           },
           tooltip: {
             trigger: 'axis'
           },
           legend: {
-            data: ['Income', 'Expenditure', 'Balance']
+            data: ['Income', 'Expenditure', 'Balance'],
+            orient: 'vertical', // 图例垂直排列
+            top: 'center', // 图例距离顶部的距离
+            left: 'right', // 图例举例左侧的距离
           },
           grid: {
             left: '3%',
